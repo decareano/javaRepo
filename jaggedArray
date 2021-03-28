@@ -1,0 +1,28 @@
+// good code
+
+import java.util.Arrays;
+
+public class Skeleton {
+    public static void main(String[] args) {
+      int[][] triangle = new int[5][];
+      //print(triangle);
+      triangle[0] = new int[1];
+      triangle[1] = new int[2];
+      triangle[2] = new int[3];
+      triangle[3] = new int[4];
+      triangle[4] = new int[5];
+      fillIn(triangle);
+    }
+    public static void fillIn(int[][] triangle) {
+      int value = 1;
+      for (int i = 0; i < triangle.length; i++) {
+        
+          triangle[i] = new int[i+1];
+        for (int j = 0; j < triangle[i].length; j++) {
+          triangle[i][j] = value;//triangle[i-1][j-1] + triangle[i-1][j];
+          //value++;
+        }
+      }
+    }
+
+}
