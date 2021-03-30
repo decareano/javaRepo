@@ -1,0 +1,9 @@
+public static int lastIndexOf(int[] myArr, int myValue) {
+    for (int i = myArr.length-1; i >= 0; i--) {
+        if (myArr[i] == myValue) 
+            return i;
+        
+    }
+    return -1;
+    
+}
