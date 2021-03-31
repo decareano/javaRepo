@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class Skeleton {
+    
+    public static void main(String[] args) {
+        int[] a1 = {3, 10000000, 5, -29, 4};
+        Skeleton.range(a1);
+        
+    }
+
+    // trick was to initialize int result to 1 instead of zero
+    // but code can be refactored
+    
+    public static int range(int[] myArr) {
+     int largest = myArr[0];
+     int smallest = myArr[0];
+     int result = 1;
+       
+     
+        for (int i = 1; i < myArr.length; i++) {
+            if (myArr[i] > largest) {
+                largest = myArr[i];
+            } 
+            if (myArr[i] < smallest) {
+              smallest = myArr[i];
+              System.out.println(smallest);
+            }
+            if (largest == smallest) {
+                return 1;
+            }
+            
+            result = largest - smallest + 1;
+        }
+        return result;
+    
+    }
+}
