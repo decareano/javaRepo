@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.*;
+public class Mode {
+
+public static void main(String[] args) {
+  int[] a = {27, 15, 15, 11, 27};
+  Mode.mode(a);
+}
+
+
+public static int mode(int[] a) {
+    TreeMap<Integer, Integer> tally = new TreeMap<>();
+    for (int i = 0; i < a.length; i++) {
+        Integer k = a[i];
+        if (tally.containsKey(k)) {
+            tally.replace(k, tally.get(k)+1);
+            
+        } else {
+            tally.put(k, 1);
+        }
+        
+    }
+    Integer key = tally.firstKey();
+    Integer value = tally.get(key);
+    for (Integer k: tally.keySet()) {
+        if (tally.get(k) > value) {
+            key = k;
+            value = tally.get(k);
+        }
+        
+    }
+    return key;
+}
+}
