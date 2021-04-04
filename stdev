@@ -1,0 +1,25 @@
+public class Skeleton {
+    public static void main(String[] args) {
+        int[] a = {3,4,9,8};
+        Skeleton.stdev(a);
+    }
+    
+    public static double stdev(int[] array) {
+    int sum = 0;
+    
+      for (int i = 0; i < array.length; i++) {
+        sum += array[i];
+      }
+    
+    double mean = (double)sum / array.length;
+    double datapoints = 0;
+    
+      for (int i = 0; i < array.length; i++) {
+        //Math.pow(array[i] - mean, 2);
+        datapoints += (array[i] - mean) * (array[i] - mean);
+        
+      }
+    return Math.sqrt(datapoints / (array.length - 1)) ;
+    }
+    
+}
