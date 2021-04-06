@@ -1,0 +1,34 @@
+//this needs to be worked with bob
+
+import java.util.Arrays;
+import java.util.ArrayList;
+public class Mode {
+
+  public static void main(String[] args) {
+    int[] a = {27, 15, 15, 11, 27};
+    Mode.mode(a);
+  }
+public static int mode(int[] a) {
+    
+    ArrayList<Integer> tally = new ArrayList<Integer>();
+    
+        
+    for (int i = 0; i < a.length; i++) {
+          int[] item = new int[2];
+          item[0] = a[i];
+          item[1] = 1;  
+          System.out.println(Arrays.toString(item));
+    
+          if (tally.contains(item)) {
+            System.out.println(item);
+          
+          } 
+        
+        
+    }
+    return 0;
+    
+    
+ 
+}
+}
