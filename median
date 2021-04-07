@@ -1,0 +1,13 @@
+public static int median(int[] a) {
+    
+        Arrays.sort(a);
+        int length = a.length;
+        int result=0,mid=0;
+        if ((length%2 != 0)) {
+            mid = (length/2);
+            result = a[mid];
+        }
+        return result;
+}
+
+//note: mid has value 5 (11/2=5) so a[mid] means a[5] and that includes the dups
