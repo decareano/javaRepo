@@ -1,0 +1,38 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+public class Mode {
+    public static boolean isDoubloon(String s) {
+      int[] counts = new int[26];
+      String lower = s.toLowerCase();
+    
+      for (int i = 0; i < lower.length(); i++) {
+        char letter = lower.charAt(i);
+        int index = letter - 'a';
+        counts[index]++;
+      
+      }
+      for (int count : counts) {
+            if (count != 0 && count != 2) {
+                return false;
+            }
+        }
+      return true;
+    }
+    
+       
+    public static void main (String[] args) {  
+        // int[] a = { 1, 2, 3, 4 };
+        // int[] b = { 1, 2, 3, 4 };
+ 
+        // if (compareArrays(a, b)) {
+        //     System.out.println("Arrays are equal");
+        // }
+        // else {
+        //     System.out.println("Arrays are not equal");
+        // }
+        System.out.println(isDoubloon("Mama"));  // true
+        System.out.println(isDoubloon("Lama"));  // false
+    }
+     
+ 
+}
