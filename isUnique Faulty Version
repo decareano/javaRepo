@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+public class Mode {
+
+  public static void main(String[] args) {
+    int[] a = {3, 2, 6, 8, 2};
+    Mode.isUnique(a);
+  }
+  public static boolean isUnique(int[] arr) {
+    // cannot be done with one loop cuz I need to iterate
+    // through all the digits in the nested loop
+    // example: 3,2,6,8,2 need to pick say 3 vs 2,6,8 and 2
+    // cannot do: 3,2 then 2,6 then 6,8 and 8,2
+    for (int i = 0; i < arr.length-1; i++) {
+      int min = arr[i];
+      int j = arr[i+1];
+      if (min > j) {
+        int temp = arr[i];
+        arr[i] = j;
+        arr[i+1] = temp;
+        min = arr[i];
+        System.out.println(min);
+      }
+    }
+
+    
+    
+  
+   
+   for (int i = 0; i < arr.length - 1; i++) {
+        if (arr[i] == arr[i + 1]) {
+            return false;
+        }
+    }
+    
+    return true;
+    
+  }
+}
