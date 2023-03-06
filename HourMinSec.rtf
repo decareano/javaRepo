@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 public class MarceProjectJava \{\
+\
+    public static void main(String[] args) \{\
+        System.out.println("0 " + getDurationString(-3945));\
+       \
+        \
+        System.out.println("1 " + getDurationString(-65, 45));\
+        System.out.println("2 " + getDurationString(65, 145));\
+        System.out.println("3 " + getDurationString(65, 45));\
+        System.out.println("4 " + getDurationString(3945));\
+    \}\
+    public static String getDurationString(int seconds) \{\
+        \
+        if (seconds <= 0) \{\
+            //you have a choice to run seconds >= than 0; it evaluates to true\
+            // and then run the code\
+            //or\
+            // run seconds <= and put the invalid return there\
+            return "no negative numbers allowed";\
+        \} else \{\
+        \
+        return  getDurationString(seconds / 60, seconds % 60);\
+        \} \
+        \
+    \}\
+    \
+    public static String getDurationString(int minutes, int seconds) \{\
+        \
+        if (minutes < 0 ) \{\
+            return "invalid data for minutes";\
+        \}\
+        if (seconds <= 0 || seconds >= 59)\{\
+            \
+            return "invalid data for seconds";\
+        \} else \{\
+            int hours = minutes / 60;\
+            int remainder = minutes % 60;\
+            \
+            //int remainder = seconds % 60;\
+            return hours + "hour " + remainder + "min " +  seconds + " seconds ";\
+        \} \
+        \
+        \
+    \}\
+    \
+    //return String XXh YYm ZZs\
+    //one minute is 60 second, one hour is 60 minutes or 3600 seconds\
+    //we are going to call the second method on the first method to return results\
+    \
+\}\
+//|| seconds <= 59) && (minutes >= 0)}
